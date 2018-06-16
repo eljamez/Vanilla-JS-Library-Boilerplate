@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
   },
   entry: {
     'Main': './src/Main.js',
-    'Main.min': './src/Main.js',
+    'Main.min': './src/Main.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -21,7 +20,7 @@ module.exports = {
       sourceMap: true,
       exclude: /Main.js/,
       include: /Main.min.js/
-    }),
+    })
   ],
   module: {
     rules: [

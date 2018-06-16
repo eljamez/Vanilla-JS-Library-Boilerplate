@@ -1,13 +1,13 @@
 {
   "name": "vanillaJS-library-boilerplate",
   "version": "0.0.1",
-  "description": "A starting point to ",
+  "description": "A simple boilerplate for creating a JavaScript library that is framework agnostic",
   "main": "dist/Main.min.js",
   "repository": "",
   "author": "Hall, James",
   "scripts": {
     "build": "webpack  --config webpack.prod.js",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch --mode=development",
     "start": "webpack-dev-server --port 8031 --open --config webpack.dev.js",
     "test": "jest",
     "lint": "eslint *.js src/*.js src/*/*.js ",
