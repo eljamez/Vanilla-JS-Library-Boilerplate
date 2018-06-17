@@ -2,15 +2,18 @@
 <html>
   <head>
     <title>vanailaJS-library-boilerplate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">vanillaJS-libarary-boilerplate</h1>
-        <h2 class="subtitle">Build you own library for fun and profit.</h2>
+    <div class="container">
+      <div class="hero is-primary">
+        <div class="hero-body">
+          <h1 class="title">vanillaJS-libarary-boilerplate</h1>
+          <h2 class="subtitle">Build you own library for fun and profit.</h2>
+        </div>
       </div>
-    </section>
+    </div>
     <section class="section">
       <div class="container">
         <div class="columns">
@@ -18,19 +21,31 @@
             <p>
               Create your library <code>code for lib</code>.
             </p>
-          </div>
-          <div class="column">
-            <h3 class="subtitle">Tried to keep it simple</h3>
+            <h3 class="subtitle">Tried to keep it simple.</h3>
             <ul>
               <li>
                 <a href="">Babel</a>
                 <a href="">Webpack</a>
                 <a href="">Yarn</a>
-                <a href="">eslint</a>
-                <a href="">Bulma</a>
+                <a href="https://eslint.org/">ESLint</a>
                 <a href="">Jest</a>
               </li>
             </ul>
+          </div>
+          <div class="column">
+            <div class="container">
+              <div class="columns has-text-centered">
+                <div class="column">
+                  <button id="decrementButton" class="button is-success">➖</button>
+                </div>
+                <div class="column">
+                  <h1 class="title is-1" id="count"></h1>
+                </div>
+                <div class="column">
+                  <button id="incrementButton" class="button is-success">➕</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

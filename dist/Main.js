@@ -143,7 +143,6 @@ function decrement() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.init = exports.counter = undefined;
 
 var _Counter = __webpack_require__(0);
 
@@ -151,12 +150,18 @@ var counter = _interopRequireWildcard(_Counter);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var init = function init() {
-  return 'inited';
-};
+var main = function () {
+  var init = function init() {
+    return 'inited';
+  };
 
-exports.counter = counter;
-exports.init = init;
+  return {
+    counter: counter,
+    init: init
+  };
+}();
+
+exports.default = main;
 
 /***/ })
 /******/ ]);

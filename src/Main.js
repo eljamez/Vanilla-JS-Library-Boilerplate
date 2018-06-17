@@ -1,10 +1,14 @@
 import * as counter from './modules/Counter'
 
-const init = () => {
-  return 'inited'
-}
+const main = (() => {
+  const init = () => {
+    return 'inited'
+  }
 
-export {
-  counter,
-  init
-}
+  return {
+    counter,
+    init
+  }
+})()
+
+export default main
