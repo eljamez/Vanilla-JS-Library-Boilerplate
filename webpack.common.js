@@ -6,11 +6,11 @@ module.exports = {
     minimize: false
   },
   entry: {
-    'Main': './src/Main.js',
-    'Main.min': './src/Main.js'
+    index: './src/index.js',
+    'index.min': './src/index.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'lib'),
     filename: '[name].js',
     library: 'lib',
     libraryTarget: 'umd'
@@ -18,8 +18,8 @@ module.exports = {
   plugins: [
     new UglifyJSPlugin({
       sourceMap: true,
-      exclude: /Main.js/,
-      include: /Main.min.js/
+      exclude: /index.js/,
+      include: /index.min.js/
     })
   ],
   module: {

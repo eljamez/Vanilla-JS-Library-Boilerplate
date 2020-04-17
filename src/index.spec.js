@@ -1,11 +1,11 @@
-import main from './Main'
+import main from './index'
 
-describe('Main.js', () => {
+describe('index.js', () => {
   it('should exist', () => {
     expect(main).toBeDefined()
   })
 
-  describe('Counter', () => {
+  describe('counter', () => {
     it('should exist', () => {
       expect(main.counter).toBeDefined()
     })

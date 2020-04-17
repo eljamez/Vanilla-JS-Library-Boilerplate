@@ -1,50 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Vanaila-JS-Library-Boilerplate</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="hero is-primary">
-        <div class="hero-body">
-          <h1 class="title">Vanaila-JS-Library-Boilerplate</h1>
-          <h2 class="subtitle">Build you own library for fun and profit.</h2>
-        </div>
+    <div class="hero is-primary">
+      <div class="hero-body">
+        <h1 class="title">Vanaila-JS-Library-Boilerplate</h1>
+        <h2 class="subtitle">Build you own library for fun and profit.</h2>
       </div>
     </div>
     <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-two-thirds">
-            <p>
-              Create your library <code>code for lib</code>.
-            </p>
-            <h3 class="subtitle">Tried to keep it simple.</h3>
-            <ul>
-              <li>
-                <a href="https://babeljs.io/">Babel</a>
-                <a href="https://webpack.js.org/">Webpack</a>
-                <a href="https://yarnpkg.com/lang/en/">Yarn</a>
-                <a href="https://eslint.org/">ESLint</a>
-                <a href="https://facebook.github.io/jest/">Jest</a>
-                <a href="https://github.com/typicode/husky">Husky</a>
-              </li>
-            </ul>
-          </div>
-          <div class="column">
-            <div class="container">
-              <div class="columns has-text-centered">
-                <div class="column">
-                  <button id="decrementButton" class="button is-success">➖</button>
-                </div>
-                <div class="column">
-                  <h1 class="title is-1" id="count"></h1>
-                </div>
-                <div class="column">
-                  <button id="incrementButton" class="button is-success">➕</button>
-                </div>
+      <div class="columns">
+        <div class="column is-one-third">
+          <h2 class="title">Create your library.</h2>
+          <h3 class="subtitle">Tried to keep it simple.</h3>
+          <ul class="list">
+            <li class="list-item"><a href="https://babeljs.io/">Babel</a></li>
+            <li class="list-item">
+              <a href="https://webpack.js.org/">Webpack</a>
+            </li>
+            <li class="list-item">
+              <a href="https://yarnpkg.com/lang/en/">Yarn</a>
+            </li>
+            <li class="list-item"><a href="https://eslint.org/">ESLint</a></li>
+            <li class="list-item">
+              <a href="https://facebook.github.io/jest/">Jest</a>
+            </li>
+            <li class="list-item">
+              <a href="https://github.com/typicode/husky">Husky</a>
+            </li>
+          </ul>
+        </div>
+        <div class="column is-two-thirds has-text-centered">
+          <h2 class="title">Example counter.</h2>
+          <div class="container">
+            <div class="columns">
+              <div class="column">
+                <button
+                  id="decrementButton"
+                  class="button has-background-danger"
+                >
+                  ➖
+                </button>
+              </div>
+              <div class="column">
+                <h1 class="title is-1" id="count"></h1>
+              </div>
+              <div class="column">
+                <button
+                  id="incrementButton"
+                  class="button has-background-success"
+                >
+                  ➕
+                </button>
               </div>
             </div>
           </div>

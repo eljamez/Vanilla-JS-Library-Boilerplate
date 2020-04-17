@@ -6,7 +6,7 @@ const common = require('./webpack.common.js')
 module.exports = merge(common, {
   mode: 'production',
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['lib']),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })

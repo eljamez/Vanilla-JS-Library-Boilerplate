@@ -1,12 +1,12 @@
-import * as counter from './Counter'
+import * as counter from './counter'
 
-describe('Counter.js', () => {
+describe('counter.js', () => {
   it('should exist', () => {
     expect(counter).toBeDefined()
   })
 
   describe('count', () => {
-    it('should not be able to access the variable \'count\'', () => {
+    it("should not be able to access the variable 'count'", () => {
       expect(counter.count).not.toBeDefined()
     })
   })
