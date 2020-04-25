@@ -1,9 +1,10 @@
 {
   "name": "vanilla-JS-library-boilerplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simple boilerplate for creating a JavaScript library that is framework agnostic",
   "main": "lib/index.min.js",
   "scripts": {
+    "generate": "node scripts/generate.js",
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --port 8031 --open --config webpack.dev.js",
     "test": "jest",
@@ -22,6 +23,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "chalk": "^4.0.0",
     "clean-webpack-plugin": "^0.1.19",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
@@ -34,6 +36,7 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
+    "readline": "^1.3.0",
     "regenerator-runtime": "^0.11.1",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.5.0",
@@ -56,9 +59,8 @@
   },
   "homepage": "https://github.com/eljamez/Vanilla-JS-Library-Boilerplate#readme",
   "keywords": [
-    "react-component",
-    "musical-typing",
-    "react-keyboard",
-    "react"
+    "boilerplate",
+    "JavaScript-library",
+    "JavaScript"
   ]
 }
