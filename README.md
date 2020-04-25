@@ -4,6 +4,25 @@
 
 A simple boilerplate for building a JavaScript library. It uses ES6 modules and only exposes the necessary functions from within. This is meant as a starting point. Includes a basic counter in the library.
 
+## Getting Started
+
+### 1. Clone or Download the repository
+
+Keep in mind, if you clone the repository you will want to update the folder name and remote after generating the library.
+
+### 2. Generate
+
+run `yarn generate` to run the CLI tool. This will first install any dependencies and then run you through a list of options.
+
+### 3. Follow the Prompts
+
+### 4. Rename your folder,
+
+1. Clone or Download the repository
+2. Run `yarn generate` (assuming you have yarn installed)
+3. Follow the prompts
+4.
+
 ## Quick Start
 
 1. Clone or Download the repository

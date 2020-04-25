@@ -1,51 +1,46 @@
 const chalk = require("chalk");
 const { prompt } = require("./readline");
-
-const error = chalk.bold.red;
-const warning = chalk.keyword("orange");
+const { generateLibrary } = require("./generateLibrary");
 
 const truthyAnswer = (ans) => ans.toLowerCase().includes("y", "yes");
-
-const continuePrompt = chalk.yellow(`
-    
-    Press "return" to continue.
-    
-    `);
 
 async function displayPrompts() {
   const config = {
     name: "bob",
+    packageName: "js-pkg",
   };
 
   console.clear();
-  console.log(chalk.green(` Welcome to the...`));
-  console.log(
-    chalk.green(`
-  ░▄░░░▄░█▀▀▄░█▀▀▄░░▀░░█░░█░░█▀▀▄░░░░░░▀░█▀▀░░░░█░░░▀░░█▀▀▄░█▀▀▄░█▀▀▄░█▀▀▄░█░░█░░░░█▀▀▄░▄▀▀▄░░▀░░█░░█▀▀░█▀▀▄░▄▀▀▄░█░░█▀▀▄░▀█▀░█▀▀
-  ░░█▄█░░█▄▄█░█░▒█░░█▀░█░░█░░█▄▄█░▀▀░░░█░▀▀▄░▀▀░█░░░█▀░█▀▀▄░█▄▄▀░█▄▄█░█▄▄▀░█▄▄█░▀▀░█▀▀▄░█░░█░░█▀░█░░█▀▀░█▄▄▀░█▄▄█░█░░█▄▄█░░█░░█▀▀
-  ░░░▀░░░▀░░▀░▀░░▀░▀▀▀░▀▀░▀▀░▀░░▀░░░░█▄█░▀▀▀░░░░▀▀░▀▀▀░▀▀▀▀░▀░▀▀░▀░░▀░▀░▀▀░▄▄▄▀░░░░▀▀▀▀░░▀▀░░▀▀▀░▀▀░▀▀▀░▀░▀▀░█░░░░▀▀░▀░░▀░░▀░░▀▀▀
-    `)
-  );
-  console.log(chalk.green(` Generator`));
 
+  console.log(
+    chalk.cyan(`
+    Welcome to the...
+
+    ░░░▀░█▀▀░░░░█░░░▀░░█▀▀▄░█▀▀▄░█▀▀▄░█▀▀▄░█░░█░░░░█▀▀▀░█▀▀░█▀▀▄░█▀▀░█▀▀▄░█▀▀▄░▀█▀░▄▀▀▄░█▀▀▄
+    ░░░█░▀▀▄░▀▀░█░░░█▀░█▀▀▄░█▄▄▀░█▄▄█░█▄▄▀░█▄▄█░▀▀░█░▀▄░█▀▀░█░▒█░█▀▀░█▄▄▀░█▄▄█░░█░░█░░█░█▄▄▀
+    ░█▄█░▀▀▀░░░░▀▀░▀▀▀░▀▀▀▀░▀░▀▀░▀░░▀░▀░▀▀░▄▄▄▀░░░░▀▀▀▀░▀▀▀░▀░░▀░▀▀▀░▀░▀▀░▀░░▀░░▀░░░▀▀░░▀░▀▀
+
+    Cool, Let's get some info...
+    
+    Much of this is to build your ${chalk.bold.magenta(
+      `package.json`
+    )} file, which can be changed after generating.`)
+  );
   config.name =
     (await prompt(
       chalk.green(`
-    What is your name? (${chalk.blue(`Needed to generate package.json`)})
+    What is your name?
     
     ${chalk.white("")}`)
     )) || config.name;
 
-  console.clear();
-
-  config.packageName = await prompt(
-    chalk.green(`
-    What is the name of your library?
+  config.packageName =
+    (await prompt(
+      chalk.green(`
+    What is the name of your package / library?
     
     ${chalk.white("")}`)
-  );
-
-  console.clear();
+    )) || config.packageName;
 
   config.description = await prompt(
     chalk.green(`
@@ -54,40 +49,78 @@ async function displayPrompts() {
     ${chalk.white("")}`)
   );
 
-  console.clear();
-
   config.repo = await prompt(
     chalk.green(`
-    What is the github (or other) repository URL?
+    What is the repository URL (Github url) ?
     
     ${chalk.white("")}`)
   );
 
-  console.clear();
-
   const useJestAnswer = await prompt(
     chalk.green(`
-    Would you like to add ${chalk.magenta(`Jest`)} for unit testing?
+    Would you like to use ${chalk.magenta(`Jest`)} for unit testing?
     
     y/N: `)
   );
 
   config.useJest = truthyAnswer(useJestAnswer);
 
+  const useESLintAnswer = await prompt(
+    chalk.green(`
+    Would you like to use ${chalk.magenta(`ESLint`)}?
+    
+    y/N: `)
+  );
+
+  config.useESLint = truthyAnswer(useESLintAnswer);
+
+  const useHuskyAnswer = await prompt(
+    chalk.green(`
+    Would you like to use ${chalk.magenta(`Husky`)} for Pre-commit checks?
+    
+    y/N: `)
+  );
+
+  config.useHusky = truthyAnswer(useHuskyAnswer);
+
   console.clear();
 
+  generateLibrary(config);
+
   console.log(
-    chalk.bold.green(
+    chalk.green(
       `
+        
+      ${chalk.bold.cyan(`🎉 Congratulations ${config.name} 🎉`)},
       
-      Congratulations ${config.name + " " || ""}🎉, Your JavaScript Library ${
-        config.packageName || ""
-      }has been created
-      
+      Your JavaScript Package ${chalk.bold.cyan(
+        config.packageName
+      )} has been created in this very repository.
+
+      Next steps include...
+
+      1) adding a remote 
+      2) running \`yarn\` and \`yarn start\`
+      3) reviewing your README.md
+      4) reviewing your demo
+      5) editing the code to your specifications
+      6) running \`yarn build\`
+      7) publishing to NPM
+
+      ENJOY!
+
+      ${chalk.bold.blue(
+        `p.s. please consider starring ${chalk.italic(
+          `https://github.com/eljamez/Vanilla-JS-Library-Boilerplate`
+        )} 😁`
+      )}
+
+      ${chalk.bold.blue(
+        `Sincerely, James ${chalk.italic(`https://www.jamescript.com`)}`
+      )}
       `
     )
   );
-  console.table(config);
 }
 
 displayPrompts();
