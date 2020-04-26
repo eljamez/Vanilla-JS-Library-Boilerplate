@@ -1,14 +1,14 @@
-import * as counter from './modules/Counter'
+import * as counter from "./modules/counter";
 
 const main = (() => {
   const init = () => {
-    return 'inited'
-  }
+    return "inited";
+  };
 
   return {
     counter,
-    init
-  }
-})()
+    init,
+  };
+})();
 
-export default main
+export default main;

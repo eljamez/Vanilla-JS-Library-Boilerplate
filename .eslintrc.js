@@ -1,13 +1,18 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint',
-    sourceType: 'module'
+    parser: "babel-eslint",
+    sourceType: "module",
+    ecmaVersion: 6,
   },
   env: {
     browser: true,
-    "jest/globals": true
+    amd: true,
+    node: true,
+    "jest/globals": true,
+    es6: true,
   },
-  extends: "standard",
-  plugins: ["jest"]
+  globals: { module: false },
+  extends: "eslint:recommended",
+  plugins: ["jest"],
 };
