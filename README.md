@@ -30,6 +30,12 @@ run `yarn generate` to run the CLI tool. This will first install any dependencie
 3. run `yarn start` to view the demo page at `localhost:8031`
 4. Adjust to your liking
 
+## Configurations
+
+### Jest
+
+Jest Configurations are set in `package.json` by default. If you want to make changes, they can be done within `package.json` or you can create a new `jest.config.js` file. [see Jest Documentation](https://jestjs.io/docs/en/configuration.html) for more details.
+
 ## Scripts
 
 - `yarn start` for development, shows a demo page where you can test your libaray

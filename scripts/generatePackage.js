@@ -38,7 +38,7 @@ async function generateFile({
   fs.writeFileSync(path.resolve(directoryPath, filePath), prettyFile);
 }
 
-function generateLibrary(config) {
+function generatePackage(config) {
   const directoryPath = path.resolve("./newSrc");
   fs.mkdirSync(directoryPath);
   fs.mkdirSync(path.resolve(directoryPath, "modules"));
@@ -50,6 +50,13 @@ function generateLibrary(config) {
     filePath: "test.js",
     template: "test",
     parser: "none",
+  });
+
+  generateFile({
+    config,
+    directoryPath,
+    filePath: "jest.config.js",
+    template: "jestConfig",
   });
 
   return;
@@ -120,5 +127,5 @@ function generateLibrary(config) {
 }
 
 module.exports = {
-  generateLibrary,
+  generatePackage,
 };

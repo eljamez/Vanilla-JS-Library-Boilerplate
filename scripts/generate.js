@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 const { prompt } = require("./readline");
-const { generateLibrary } = require("./generateLibrary");
+const { generatePackage } = require("./generatePackage");
 
 const truthyAnswer = (ans) => ans.toLowerCase().includes("y", "yes");
 
@@ -85,7 +85,7 @@ async function displayPrompts() {
 
   console.clear();
 
-  generateLibrary(config);
+  generatePackage(config);
 
   console.log(
     chalk.green(
